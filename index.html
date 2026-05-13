@@ -237,16 +237,20 @@
                 </div>
             </div>
 
-            <form id="whatsappForm" class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="76c581ee-2a2f-4f68-8206-3dc168e44001">
+                <!-- Optional: redirect to the home page or a success page -->
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                
                 <div class="input-box">
-                    <input type="text" id="waName" placeholder="Full Name" required>
-                    <input type="email" id="waEmail" placeholder="Email Address" required>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="waSubject" placeholder="Subject" style="width: 100%;" required>
+                    <input type="text" name="subject" placeholder="Subject" style="width: 100%;" required>
                 </div>
-                <textarea id="waMessage" cols="30" rows="7" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send via WhatsApp <i class='bx bxl-whatsapp'></i></button>
+                <textarea name="message" cols="30" rows="7" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message <i class='bx bx-send'></i></button>
             </form>
         </div>
     </section>

@@ -54,27 +54,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// WhatsApp Form Submission
-const whatsappForm = document.getElementById('whatsappForm');
-if (whatsappForm) {
-    whatsappForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('waName').value;
-        const email = document.getElementById('waEmail').value;
-        const subject = document.getElementById('waSubject').value;
-        const message = document.getElementById('waMessage').value;
-        
-        // Construct WhatsApp Message
-        const waMessage = `*New Message from Portfolio*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
-        
-        // Phone number to send to (with country code)
-        const phone = "916381288755";
-        
-        // WhatsApp API URL
-        const whatsappUrl = `https://wa.me/${phone}?text=${waMessage}`;
-        
-        // Open WhatsApp in a new tab
-        window.open(whatsappUrl, '_blank');
-    });
-}
+
