@@ -237,19 +237,16 @@
                 </div>
             </div>
 
-            <form action="https://formsubmit.co/stormysk07@gmail.com" method="POST" class="contact-form">
-                <!-- Disable Captcha for smoother UX -->
-                <input type="hidden" name="_captcha" value="false">
-                
+            <form id="whatsappForm" class="contact-form">
                 <div class="input-box">
-                    <input type="text" name="name" placeholder="Full Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="text" id="waName" placeholder="Full Name" required>
+                    <input type="email" id="waEmail" placeholder="Email Address" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="subject" placeholder="Subject" style="width: 100%;" required>
+                    <input type="text" id="waSubject" placeholder="Subject" style="width: 100%;" required>
                 </div>
-                <textarea name="message" id="" cols="30" rows="7" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message <i class='bx bx-send'></i></button>
+                <textarea id="waMessage" cols="30" rows="7" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send via WhatsApp <i class='bx bxl-whatsapp'></i></button>
             </form>
         </div>
     </section>
