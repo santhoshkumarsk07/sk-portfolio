@@ -31,27 +31,12 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 };
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.addEventListener("DOMContentLoaded", () => {
-    const animatedElements = document.querySelectorAll('.animate-element');
-    animatedElements.forEach((el) => {
-        observer.observe(el);
-    });
+// Initialize AOS Animation
+AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100
 });
 
 // Scroll Progress Bar
@@ -200,3 +185,54 @@ if (document.getElementById('particles-js')) {
     });
 }
 
+// TagCloud Initialization
+const myTags = [
+    'Python', 'Java', 'C', 'HTML', 'CSS', 'JavaScript', 
+    'Node.js', 'TypeScript', 'TensorFlow', 'PyTorch', 
+    'Keras', 'Scikit-Learn', 'Docker', 'Git', 'GitHub', 
+    'MySQL', 'DynamoDB', 'Canva', 'Figma', 'Salesforce'
+];
+if (document.querySelector('.skill-sphere')) {
+    var tagCloud = TagCloud('.skill-sphere', myTags,{
+        radius: window.innerWidth > 768 ? 250 : 150,
+        maxSpeed: 'normal',
+        initSpeed: 'normal',
+        direction: 135,
+        keep: true
+    });
+    // Add green color to tagcloud items
+    document.querySelector('.skill-sphere').style.color = "var(--main-color)";
+    document.querySelector('.skill-sphere').style.fontWeight = "bold";
+}
+
+// GitHub Calendar Initialization
+if (document.querySelector('.calendar')) {
+    GitHubCalendar(".calendar", "santhoshkumarsk07", {
+        responsive: true,
+        tooltips: true
+    });
+}
+
+// Magnetic Buttons
+const magneticButtons = document.querySelectorAll('.btn');
+magneticButtons.forEach(btn => {
+    // Add transition for smooth return
+    btn.style.transition = 'transform 0.3s ease, background 0.3s ease, color 0.3s ease';
+    
+    btn.addEventListener('mousemove', function(e) {
+        // Temporarily disable transition during hover to allow immediate tracking
+        btn.style.transition = 'none';
+        
+        const position = btn.getBoundingClientRect();
+        const x = e.pageX - position.left - position.width / 2;
+        const y = e.pageY - position.top - position.height / 2;
+
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+    });
+
+    btn.addEventListener('mouseout', function() {
+        // Restore transition to animate back to original position
+        btn.style.transition = 'transform 0.3s ease, background 0.3s ease, color 0.3s ease';
+        btn.style.transform = 'translate(0px, 0px)';
+    });
+});

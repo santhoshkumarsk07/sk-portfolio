@@ -927,3 +927,63 @@ section {
         font-size: 50%;
     }
 }
+
+
+/* Phase 2 CSS Updates */
+
+/* Rotating Cyber Glow Borders for Projects */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.project-horizontal-card {
+  position: relative;
+  background: linear-gradient(var(--glass-bg), var(--glass-bg)) padding-box,
+              conic-gradient(from var(--angle), transparent 50%, var(--main-color) 100%) border-box;
+  border: 2px solid transparent;
+  animation: 4s rotateAngle linear infinite;
+}
+
+@keyframes rotateAngle {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.project-horizontal-card:hover {
+  background: linear-gradient(var(--glass-bg), var(--glass-bg)) padding-box,
+              conic-gradient(from var(--angle), transparent 20%, var(--main-color) 80%, #00b3ff 100%) border-box;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+/* GitHub Calendar Styling */
+.github-activity {
+    padding-top: 5rem;
+}
+.calendar-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    padding: 3rem;
+    margin: 0 auto;
+    max-width: 1100px;
+    color: var(--text-color);
+}
+
+/* Adjust GitHub Calendar theme to match portfolio */
+.calendar-container .ContributionCalendar-day[data-level="0"] { background-color: #111 !important; border-color: #222 !important; }
+.calendar-container .ContributionCalendar-day[data-level="1"] { background-color: #004d29 !important; border-color: #004d29 !important;}
+.calendar-container .ContributionCalendar-day[data-level="2"] { background-color: #008044 !important; border-color: #008044 !important;}
+.calendar-container .ContributionCalendar-day[data-level="3"] { background-color: #00b35f !important; border-color: #00b35f !important;}
+.calendar-container .ContributionCalendar-day[data-level="4"] { background-color: var(--main-color) !important; border-color: var(--main-color) !important; box-shadow: 0 0 5px var(--main-color); }
+
+/* Override some GitHub CSS */
+.calendar-container text.ContributionCalendar-label {
+    fill: var(--text-color) !important;
+}
+.calendar-container .graph-before-activity-overview {
+    border: none;
+}
