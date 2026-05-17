@@ -368,3 +368,35 @@ if (timelineContainer && timelineProgress) {
         });
     });
 }
+
+
+// About Me Hacker Terminal
+if (document.getElementById('term-bio')) {
+    new Typed('#term-bio', {
+        strings: [`
+<span class="s-keyword">class</span> <span class="s-variable" style="color:#e5c07b;">DataScientist</span>:
+    <span class="s-keyword">def</span> <span class="s-function">__init__</span>(<span class="s-variable">self</span>):
+        <span class="s-variable">self</span>.name <span class="s-operator">=</span> <span class="s-string">"Santhosh Kumar"</span>
+        <span class="s-variable">self</span>.role <span class="s-operator">=</span> <span class="s-string">"AI & Data Science Student"</span>
+        <span class="s-variable">self</span>.university <span class="s-operator">=</span> <span class="s-string">"Chennai Institute of Technology"</span>
+        <span class="s-variable">self</span>.cgpa <span class="s-operator">=</span> <span class="s-variable">8.8</span>
+        
+    <span class="s-keyword">def</span> <span class="s-function">get_bio</span>(<span class="s-variable">self</span>):
+        <span class="s-keyword">return</span> (
+            <span class="s-string">"I specialize in building robust machine learning models, "</span>
+            <span class="s-string">"analyzing complex datasets, and developing intelligent "</span>
+            <span class="s-string">"solutions that solve real-world problems. With a deep "</span>
+            <span class="s-string">"curiosity for how data shapes our world, I continually "</span>
+            <span class="s-string">"strive to learn modern technologies and methodologies."</span>
+        )
+        
+<span class="s-comment"># Initialize profile</span>
+<span class="s-variable">profile</span> <span class="s-operator">=</span> <span class="s-function">DataScientist</span>()
+<span class="s-function">print</span>(profile.<span class="s-function">get_bio</span>())
+        `],
+        typeSpeed: 15,
+        showCursor: true,
+        cursorChar: '|',
+        loop: false
+    });
+}
