@@ -299,3 +299,72 @@ if (document.getElementById('term-sumit')) {
         backSpeed: 10
     });
 }
+
+
+// Preloader Boot Sequence
+document.body.classList.add('loading');
+const preloader = document.getElementById('preloader');
+if (preloader) {
+    new Typed('#boot-text', {
+        strings: [
+            '> Initializing Neural Network...^500<br>> Loading Data Models...^500<br>> Establishing Secure Connection...^500<br>> <span style="color:#fff">Access Granted. Welcome Santhosh.</span>'
+        ],
+        typeSpeed: 20,
+        showCursor: false,
+        onComplete: function() {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    document.body.classList.remove('loading');
+                }, 500);
+            }, 1000);
+        }
+    });
+}
+
+// Glass Pill Navbar scroll behavior
+let lastScrollTop = 0;
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down
+        header.classList.add('hide');
+    } else {
+        // Scrolling up
+        header.classList.remove('hide');
+    }
+    lastScrollTop = scrollTop;
+});
+
+// Glowing Timeline Scroll Progress
+const timelineContainer = document.querySelector('.timeline-container');
+const timelineProgress = document.getElementById('timeline-progress');
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+if (timelineContainer && timelineProgress) {
+    window.addEventListener('scroll', () => {
+        const containerRect = timelineContainer.getBoundingClientRect();
+        const containerTop = containerRect.top;
+        const containerHeight = containerRect.height;
+        const windowHeight = window.innerHeight;
+        
+        // Calculate how far we've scrolled into the container
+        let progress = ((windowHeight / 2) - containerTop) / containerHeight * 100;
+        
+        // Clamp between 0 and 100
+        progress = Math.max(0, Math.min(100, progress));
+        timelineProgress.style.height = progress + '%';
+        
+        // Light up dots
+        timelineItems.forEach(item => {
+            const itemRect = item.getBoundingClientRect();
+            if (itemRect.top < windowHeight / 2) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    });
+}
