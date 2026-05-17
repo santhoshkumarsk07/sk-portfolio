@@ -236,3 +236,66 @@ magneticButtons.forEach(btn => {
         btn.style.transform = 'translate(0px, 0px)';
     });
 });
+
+
+// Mock Terminal Typing Animations
+if (document.getElementById('term-portal')) {
+    new Typed('#term-portal', {
+        strings: [`
+<span class="s-comment">// Connecting to Database...</span>
+<span class="s-keyword">const</span> <span class="s-variable">mongoose</span> <span class="s-operator">=</span> <span class="s-function">require</span>(<span class="s-string">'mongoose'</span>);
+<span class="s-keyword">await</span> mongoose.<span class="s-function">connect</span>(URI);
+<span class="s-comment">// Auth middleware active</span>
+router.<span class="s-function">post</span>(<span class="s-string">'/api/payroll'</span>, <span class="s-function">verifyJWT</span>, (<span class="s-variable">req</span>, <span class="s-variable">res</span>) <span class="s-keyword">=></span> {
+    <span class="s-keyword">return</span> res.<span class="s-function">status</span>(<span class="s-variable">200</span>).<span class="s-function">json</span>({<span class="s-string">"status"</span>: <span class="s-string">"success"</span>});
+});`],
+        typeSpeed: 30,
+        showCursor: true,
+        cursorChar: '|',
+        loop: true,
+        backDelay: 5000,
+        backSpeed: 10
+    });
+}
+
+if (document.getElementById('term-edgelearn')) {
+    new Typed('#term-edgelearn', {
+        strings: [`
+<span class="s-comment"># Initializing Whisper Model</span>
+<span class="s-keyword">import</span> whisper
+<span class="s-variable">model</span> <span class="s-operator">=</span> whisper.<span class="s-function">load_model</span>(<span class="s-string">"tiny"</span>)
+
+<span class="s-keyword">def</span> <span class="s-function">process_audio</span>(<span class="s-variable">audio_file</span>):
+    <span class="s-variable">result</span> <span class="s-operator">=</span> model.<span class="s-function">transcribe</span>(audio_file)
+    <span class="s-keyword">return</span> result[<span class="s-string">"text"</span>]
+    
+<span class="s-function">print</span>(<span class="s-string">"Model ready on edge device."</span>)`],
+        typeSpeed: 30,
+        showCursor: true,
+        cursorChar: '|',
+        loop: true,
+        backDelay: 5000,
+        backSpeed: 10
+    });
+}
+
+if (document.getElementById('term-sumit')) {
+    new Typed('#term-sumit', {
+        strings: [`
+<span class="s-comment"># Generating Smart Summary</span>
+<span class="s-keyword">from</span> transformers <span class="s-keyword">import</span> pipeline
+
+<span class="s-variable">summarizer</span> <span class="s-operator">=</span> <span class="s-function">pipeline</span>(<span class="s-string">"summarization"</span>)
+
+<span class="s-keyword">def</span> <span class="s-function">summarize_text</span>(<span class="s-variable">text</span>):
+    <span class="s-variable">summary</span> <span class="s-operator">=</span> <span class="s-function">summarizer</span>(text, max_length=<span class="s-variable">130</span>)
+    <span class="s-keyword">return</span> summary[<span class="s-variable">0</span>][<span class="s-string">'summary_text'</span>]
+`],
+        typeSpeed: 30,
+        showCursor: true,
+        cursorChar: '|',
+        loop: true,
+        backDelay: 5000,
+        backSpeed: 10
+    });
+}
