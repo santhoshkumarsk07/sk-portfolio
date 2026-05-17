@@ -33,7 +33,72 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
+    cursor: none; /* Hide default cursor for custom cursor */
 }
+
+/* Custom Cursor */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 10000;
+}
+.scroll-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-gradient);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Particles JS */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Typed cursor styling */
+.typed-cursor {
+    color: var(--main-color);
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
 
 /* Animations */
 .animate-element {
