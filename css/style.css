@@ -1218,3 +1218,23 @@ body.loading {
 @media (max-width: 768px) {
     .timeline-content { flex-direction: column; text-align: center; }
 }
+
+/* Option B: Centered Focus Bio */
+.focus-bio-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    padding: 3rem;
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0) 0%, rgba(0, 255, 136, 0.05) 100%);
+    border-bottom: 2px solid var(--main-color);
+    border-radius: 2rem;
+}
+.focus-bio-container p {
+    margin-bottom: 1rem;
+}
+.focus-bio-container strong {
+    color: var(--main-color);
+}
