@@ -2,6 +2,7 @@ import React from 'react';
 import { FadeIn } from './FadeIn';
 import { Magnet } from './Magnet';
 import { ContactButton } from './ContactButton';
+import profileYellow from '../assets/photos/profile_yellow.png';
 
 export const HeroSection: React.FC = () => {
   const navLinks = [
@@ -60,7 +61,7 @@ export const HeroSection: React.FC = () => {
               {/* Circular photo container */}
               <div className="relative w-full h-full overflow-hidden rounded-full border-4 border-white/40 ring-4 ring-[#B600A8]/30 bg-[#0C0C0C] shadow-[0_0_80px_rgba(182,0,168,0.5)] flex items-center justify-center">
                 <img
-                  src="/santhosh_yellow_profile.png"
+                  src={profileYellow}
                   alt="Santhoshkumar A Portrait"
                   className="w-full h-full object-cover object-[center_60%] scale-110 group-hover:scale-115 transition-all duration-700 filter contrast-[1.12] brightness-[1.06] saturate-[1.15] drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]"
                 />

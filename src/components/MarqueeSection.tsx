@@ -1,14 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import photo1 from '../assets/photos/photo1.jpg';
+import photo2 from '../assets/photos/photo2.jpg';
+import photo3 from '../assets/photos/photo3.jpg';
+import photo4 from '../assets/photos/photo4.jpg';
+import photo5 from '../assets/photos/photo5.jpg';
+import photo6 from '../assets/photos/photo6.jpg';
+import photo7 from '../assets/photos/photo7.jpg';
+import photo8 from '../assets/photos/photo8.jpg';
+
 const uploadedPhotos = [
-  '/photos/WhatsApp Image 2026-10-08 at 00.37.31 (1).jpeg',
-  '/photos/WhatsApp Image 2026-10-08 at 00.37.31.jpeg',
-  '/photos/WhatsApp Image 2026-10-08 at 00.50.47.jpeg',
-  '/photos/WhatsApp Image 2026-10-08 at 00.51.06.jpeg',
-  '/photos/WhatsApp Image 2026-10-08 at 00.52.33.jpeg',
-  '/photos/WhatsApp Image 2026-10-08 at 01.03.12.jpeg',
-  '/photos/WhatsApp Image 2026-10-08 at 01.04.06.jpeg',
-  '/photos/WhatsApp Image 2026-10-08 at 01.05.26.jpeg',
+  photo1,
+  photo2,
+  photo3,
+  photo4,
+  photo5,
+  photo6,
+  photo7,
+  photo8,
 ];
 
 // Split into 2 rows and duplicate for continuous seamless marquee scrolling
