@@ -14,7 +14,7 @@ export const HeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative h-screen flex flex-col justify-between overflow-x-clip bg-[#0C0C0C] z-10 px-6 md:px-10">
+    <section className="relative h-screen flex flex-col justify-between overflow-x-clip bg-[#0C0C0C] z-10 px-4 sm:px-6 md:px-10">
       {/* Navbar */}
       <FadeIn delay={0} y={-20} className="w-full pt-6 md:pt-8 z-30">
         <nav className="flex items-center justify-between w-full">
@@ -22,7 +22,7 @@ export const HeroSection: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
+              className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-base md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
             >
               {link.name}
             </a>
@@ -31,21 +31,21 @@ export const HeroSection: React.FC = () => {
       </FadeIn>
 
       {/* Hero Heading: SANTHOSH with 'kumar' small at the bottom-right (under 'sh') */}
-      <div className="relative z-20 overflow-hidden w-full text-center mt-4 sm:mt-2 md:-mt-3 flex justify-center">
+      <div className="relative z-20 overflow-hidden w-full text-center mt-2 sm:mt-2 md:-mt-3 flex justify-center">
         <FadeIn delay={0.15} y={40}>
           <div className="relative inline-block">
             <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap text-[12vw] sm:text-[13.5vw] md:text-[15vw] lg:text-[16.5vw]">
               santhosh
             </h1>
-            <span className="absolute right-2 sm:right-4 -bottom-3 sm:-bottom-4 md:-bottom-6 text-[2.4vw] sm:text-[2.8vw] md:text-[3.2vw] font-light tracking-[0.25em] uppercase text-[#BBCCD7] opacity-90">
+            <span className="absolute right-1 sm:right-4 -bottom-2 sm:-bottom-4 md:-bottom-6 text-[2.4vw] sm:text-[2.8vw] md:text-[3.2vw] font-light tracking-[0.25em] uppercase text-[#BBCCD7] opacity-90">
               kumar
             </span>
           </div>
         </FadeIn>
       </div>
 
-      {/* Centered Absolute Hero Portrait in Circle with User's Uploaded Yellow Image */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[390px] md:h-[390px] lg:w-[450px] lg:h-[450px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-auto">
+      {/* Centered Absolute Hero Portrait: Mobile-Compressed Circle Frame */}
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[160px] h-[160px] xs:w-[200px] xs:h-[200px] sm:w-[300px] sm:h-[300px] md:w-[380px] md:h-[380px] lg:w-[440px] lg:h-[440px] max-w-[50vw] max-h-[50vw] sm:max-w-none sm:max-h-none top-[52%] -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-auto">
         <FadeIn delay={0.6} y={30} className="w-full h-full flex justify-center items-center">
           <Magnet
             padding={150}
@@ -56,10 +56,10 @@ export const HeroSection: React.FC = () => {
           >
             <div className="relative w-full h-full group cursor-pointer">
               {/* Dynamic pulsing gradient aura behind the circular frame */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#B600A8] via-[#7621B0] to-[#FFD700] blur-2xl opacity-65 group-hover:opacity-95 transition-opacity duration-500 animate-pulse-slow" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#B600A8] via-[#7621B0] to-[#FFD700] blur-xl sm:blur-2xl opacity-65 group-hover:opacity-95 transition-opacity duration-500 animate-pulse-slow" />
               
-              {/* Circular photo container */}
-              <div className="relative w-full h-full overflow-hidden rounded-full border-4 border-white/40 ring-4 ring-[#B600A8]/30 bg-[#0C0C0C] shadow-[0_0_80px_rgba(182,0,168,0.5)] flex items-center justify-center">
+              {/* Circular photo container with mobile scaling */}
+              <div className="relative w-full h-full overflow-hidden rounded-full border-2 sm:border-4 border-white/40 ring-2 sm:ring-4 ring-[#B600A8]/30 bg-[#0C0C0C] shadow-[0_0_50px_rgba(182,0,168,0.5)] flex items-center justify-center">
                 <img
                   src={profileYellow}
                   alt="Santhoshkumar A Portrait"
@@ -73,10 +73,10 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-20 flex justify-between items-end pb-7 sm:pb-8 md:pb-10 w-full">
+      <div className="relative z-20 flex justify-between items-end pb-5 sm:pb-8 md:pb-10 w-full gap-2">
         {/* Left Subtext */}
         <FadeIn delay={0.35} y={20}>
-          <p className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px] text-[clamp(0.75rem,1.4vw,1.5rem)]">
+          <p className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[130px] xs:max-w-[160px] sm:max-w-[220px] md:max-w-[260px] text-[clamp(0.65rem,1.4vw,1.5rem)]">
             an ai & ml engineer driven by crafting striking and unforgettable projects
           </p>
         </FadeIn>
